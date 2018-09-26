@@ -21,6 +21,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var flippingCount: UILabel!
     @IBOutlet var cardButtons: [UIButton]!
     
+    @IBAction func restartButton(_ sender: UIButton) {
+        restartGame()
+    }
+    
+    func restartGame() {
+        game = Concentration(numberOfPairsOfCards: cardButtons.count / 2)
+        flippingCount.text = "Flips: \(flipCount)"
+    }
+
+    
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let cardNumber = cardButtons.index(of: sender) {
