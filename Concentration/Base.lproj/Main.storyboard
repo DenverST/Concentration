@@ -257,19 +257,22 @@
                                     <action selector="touchCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Laa-NO-3ax"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Flips: 0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5vK-SN-iYJ">
-                                <rect key="frame" x="16" y="651" width="148" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Flips: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKF-F5-RAi">
+                                <rect key="frame" x="16" y="643" width="164" height="64"/>
+                                <color key="backgroundColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.75507812500000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="RKF-F5-RAi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EcA-V0-QdJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="flipCountLabel" destination="5vK-SN-iYJ" id="IEP-Xd-uTE"/>
+                        <outlet property="flippingCount" destination="RKF-F5-RAi" id="jam-es-Ytm"/>
                         <outletCollection property="cardButtons" destination="44g-Kf-3Jj" collectionClass="NSMutableArray" id="9xI-MP-0VP"/>
                         <outletCollection property="cardButtons" destination="3gb-wp-i1O" collectionClass="NSMutableArray" id="hxY-ZQ-QeC"/>
                         <outletCollection property="cardButtons" destination="Z1t-US-HKa" collectionClass="NSMutableArray" id="Ev9-tw-CVe"/>
