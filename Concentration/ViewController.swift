@@ -21,8 +21,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var flipCountLabel: UITextField!
     @IBOutlet var cardButtons: [UIButton]!
     
-    var emojiChoices = ["🤯", "🤫", "😎", "😈", "🐏", "🍵", "🥟", "🎺", "🏩", "⌛️", "😎", "🍵", "🥟", "🤯", "🏩", "🤫", "🐏", "⌛️", "🎺", "😈"]
-    
     @IBAction func touchCard(_ sender: UIButton) {
         flipCount += 1
         if let cardNumber = cardButtons.index(of: sender) {
@@ -45,11 +43,23 @@ class ViewController: UIViewController {
         }
     }
         
-        var emojiChoices = ["🤯", "🤫", "😎", "😈", "🐏", "🍵", "🥟", "🎺", "🏩", "⌛️", "😎", "🍵", "🥟", "🤯", "🏩", "🤫", "🐏", "⌛️", "🎺", "😈"]
+    var emojiChoices = ["🤯", "🤫", "😎", "😈", "🐏", "🍵", "🥟", "🎺", "🏩", "⌛️"]
+    
+    var emoji = [Int:String]()
         
-        func emoji(for card: Card) -> String {
-            return "?"
-        }
+    func emoji(for card: Card) -> String {
+        if emoji[card.identifier] == nil, emojiChoices.count > 0 {
+            let randomIndex = Int (arc4random_uniform(UInt32(emojiChoices.count)))
+            emoji[card.identifier] = emojiChoices.remove(at: randomIndex)
+            }
+        
+        return emoji[card.identifier] ?? "?"
+//        if emoji[card.identifier] != nil {
+//            return emoji[card.identifier]!
+//        } else {
+//            return "?"
+//        }
+    }
 }
 
 //    func flipCard(withEmoji emoji: String, on button: UIButton) {
