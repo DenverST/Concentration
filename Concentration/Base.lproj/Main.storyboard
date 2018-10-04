@@ -281,7 +281,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="New Game"/>
                                 <connections>
-                                    <action selector="restartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1zO-bg-ekD"/>
+                                    <action selector="onNewGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="URY-Xb-3jc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -317,6 +317,7 @@
                     </view>
                     <connections>
                         <outlet property="flippingCount" destination="RKF-F5-RAi" id="jam-es-Ytm"/>
+                        <outlet property="newGameButton" destination="FDl-7m-cPQ" id="mUf-T8-73x"/>
                         <outletCollection property="cardButtons" destination="44g-Kf-3Jj" collectionClass="NSMutableArray" id="9xI-MP-0VP"/>
                         <outletCollection property="cardButtons" destination="3gb-wp-i1O" collectionClass="NSMutableArray" id="hxY-ZQ-QeC"/>
                         <outletCollection property="cardButtons" destination="Jkw-Mz-qdy" collectionClass="NSMutableArray" id="1th-2P-8Cd"/>

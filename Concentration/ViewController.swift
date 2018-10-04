@@ -25,13 +25,22 @@ class ViewController: UIViewController {
     @IBOutlet private weak var flippingCount: UILabel!
     @IBOutlet private var cardButtons: [UIButton]!
     
-    @IBAction private func restartButton(_ sender: UIButton) {
+    
+    @IBOutlet weak var newGameButton: UIButton! {
+        didSet {
+            newGameButton.titleLabel?.numberOfLines = 0
+        }
+    }
+    
+    
+    @IBAction func onNewGame(_ sender: UIButton) {
         restartGame()
     }
     
     func restartGame() {
         game = Concentration(numberOfPairsOfCards: cardButtons.count / 2)
         flippingCount.text = "Flips: \(flipCount)"
+        emoji = [:]
     }
 
     
