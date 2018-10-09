@@ -37,7 +37,7 @@ struct Concentration {
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnly, matchIndex != index {
 //                check if cards match
-                if cards[matchIndex].identifier == cards[index].identifier {
+                if cards[matchIndex] == cards[index] {
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                 }
@@ -56,6 +56,6 @@ struct Concentration {
             cards += [card, card]
         }
         // TODO shuffle the cards
-        cards.shuffle()
+//        cards.shuffle()
     }
 }
