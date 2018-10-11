@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConcentrationViewController: UIViewController {
     
     private lazy var game: Concentration = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
@@ -63,28 +63,32 @@ class ViewController: UIViewController {
     }
     
     private func upDateViewFromModel() {
-        for index in cardButtons.indices {
-            let button = cardButtons[index]
-            let card = game.cards[index]
-            if card.isFaceUp {
-                button.setTitle(emoji(for: card), for: UIControl.State.normal)
-                button.backgroundColor = #colorLiteral(red: 1, green: 0.9768045545, blue: 0.6977539062, alpha: 1)
-            } else {
-                button.setTitle("", for: UIControl.State.normal)
-                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5212053061, blue: 1, alpha: 0) : #colorLiteral(red: 1, green: 0.5212053061, blue: 1, alpha: 1)
+        if cardButtons != nil {
+            for index in cardButtons.indices {
+                let button = cardButtons[index]
+                let card = game.cards[index]
+                if card.isFaceUp {
+                    button.setTitle(emoji(for: card), for: UIControl.State.normal)
+                    button.backgroundColor = #colorLiteral(red: 1, green: 0.9768045545, blue: 0.6977539062, alpha: 1)
+                } else {
+                    button.setTitle("", for: UIControl.State.normal)
+                    button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5212053061, blue: 1, alpha: 0) : #colorLiteral(red: 1, green: 0.5212053061, blue: 1, alpha: 1)
+                }
             }
         }
     }
-        
-//    private var emojiChoices = ["🤯", "🤫", "😎", "😈", "🐏", "🍵", "🥟", "🎺", "🏩", "⌛️"]
     
+    var theme: String? {
+        didSet {
+            emojiChoices = theme ?? ""
+            emoji = [:]
+            upDateViewFromModel()
+        }
+    }
     private var emojiChoices = "🤯🤫😎😈🐏🍵🥟🎺🏩⌛️"
     
     private var emoji = [Card:String]()
-//     var emoji has Int key: String value (like a hash)
-//    now updated to be Card:string
     
-        
     private func emoji(for card: Card) -> String {
         if emoji[card] == nil, emojiChoices.count > 0 {
             let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
@@ -105,5 +109,3 @@ extension Int {
         }
     }
 }
-
-
