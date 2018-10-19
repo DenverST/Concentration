@@ -25,7 +25,7 @@ struct Card: Hashable
     
     private static func getUniqueIdentifier() -> Int {
         identifierFactory += 1
-        return Card.identifierFactory
+        return identifierFactory
     }
     
     init() {

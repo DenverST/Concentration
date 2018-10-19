@@ -13,7 +13,7 @@ class ConcentrationViewController: UIViewController {
     private lazy var game: Concentration = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
-        return (cardButtons.count / 2)
+        return (cardButtons.count + 1 / 2)
     }
         
     private(set) var flipCount = 0 {
@@ -36,22 +36,22 @@ class ConcentrationViewController: UIViewController {
     @IBOutlet private var cardButtons: [UIButton]!
     
     
-    @IBOutlet weak var newGameButton: UIButton! {
-        didSet {
-            newGameButton.titleLabel?.numberOfLines = 0
-        }
-    }
-    
-    
-    @IBAction func onNewGame(_ sender: UIButton) {
-        restartGame()
-    }
-    
-    func restartGame() {
-        game = Concentration(numberOfPairsOfCards: cardButtons.count / 2)
-        flippingCount.text = "Flips: \(flipCount)"
-        emoji = [:]
-    }
+//    @IBOutlet weak var newGameButton: UIButton! {
+//        didSet {
+//            newGameButton.titleLabel?.numberOfLines = 0
+//        }
+//    }
+//    
+//    
+//    @IBAction func onNewGame(_ sender: UIButton) {
+//        restartGame()
+//    }
+//    
+//    func restartGame() {
+//        game = Concentration(numberOfPairsOfCards: cardButtons.count / 2)
+//        flippingCount.text = "Flips: \(flipCount)"
+//        emoji = [:]
+//    }
 
     
     @IBAction private func touchCard(_ sender: UIButton) {
