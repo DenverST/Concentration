@@ -47,6 +47,7 @@ class ConcentrationViewController: UIViewController {
     
     func restartGame() {
         game = Concentration(numberOfPairsOfCards: cardButtons.count / 2)
+        flipCount = 0
         flippingCount.text = "Flips: \(flipCount)"
         emoji = [:]
     }
