@@ -11,7 +11,7 @@ import Foundation
 struct Card: Hashable
 {
     
-    var hasValue: Int { return identifier }
+    var hashValue: Int { return identifier }
     
     static func ==(lhs: Card, rhs: Card) -> Bool {
         return lhs.identifier == rhs.identifier

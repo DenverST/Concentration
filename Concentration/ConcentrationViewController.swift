@@ -33,25 +33,23 @@ class ConcentrationViewController: UIViewController {
             updateFlipCountLabel()
         }
     }
+    
     @IBOutlet private var cardButtons: [UIButton]!
+    @IBOutlet weak var newGameButton: UIButton! {
+        didSet {
+            newGameButton.titleLabel?.numberOfLines = 0
+        }
+    }
     
+    @IBAction func onNewGame(_ sender: UIButton) {
+        restartGame()
+    }
     
-//    @IBOutlet weak var newGameButton: UIButton! {
-//        didSet {
-//            newGameButton.titleLabel?.numberOfLines = 0
-//        }
-//    }
-//    
-//    
-//    @IBAction func onNewGame(_ sender: UIButton) {
-//        restartGame()
-//    }
-//    
-//    func restartGame() {
-//        game = Concentration(numberOfPairsOfCards: cardButtons.count / 2)
-//        flippingCount.text = "Flips: \(flipCount)"
-//        emoji = [:]
-//    }
+    func restartGame() {
+        game = Concentration(numberOfPairsOfCards: cardButtons.count / 2)
+        flippingCount.text = "Flips: \(flipCount)"
+        emoji = [:]
+    }
 
     
     @IBAction private func touchCard(_ sender: UIButton) {
