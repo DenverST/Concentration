@@ -50,6 +50,8 @@ class ConcentrationViewController: UIViewController {
         flipCount = 0
         flippingCount.text = "Flips: \(flipCount)"
         emoji = [:]
+        emojiChoices = theme ?? ""
+        upDateViewFromModel()
     }
 
     
