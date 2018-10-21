@@ -13,7 +13,7 @@ class ConcentrationViewController: UIViewController {
     private lazy var game: Concentration = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
-        return (cardButtons.count + 1 / 2)
+        return (cardButtons.count / 2)
     }
         
     private(set) var flipCount = 0 {
@@ -53,6 +53,13 @@ class ConcentrationViewController: UIViewController {
         emojiChoices = theme ?? ""
         upDateViewFromModel()
     }
+    
+    
+    // how does this line stop the random ?? error
+//    override func viewDidLoad() {
+//        restartGame()
+//    }
+    // the answer was not to set the game with the number of paids of cards to equal the count of card buttons + 1 then divided by two
 
     
     @IBAction private func touchCard(_ sender: UIButton) {
