@@ -11,11 +11,17 @@ import UIKit
 class ConcentrationThemeChooserViewController: UIViewController, UISplitViewControllerDelegate {
 
 
+//    let themes = [
+//        "Sports":"⚽️🏀🏈⚾️🎾🏐🏉🎱🏓🏸🏒🏑",
+//        "Halloween":"🎃👻🦇☃️⛄️🍭🍬🎩👹👺👿😈",
+//        "Tricky":"⌛️🤞✌️⏳⚒🛠🕐🕑◾️◼️🔡🔠",
+//    ]
+    
     let themes = [
-        "Sports":"⚽️🏀🏈⚾️🎾🏐🏉🎱🏓🏸🏒🏑",
-        "Halloween":"🎃👻🦇☃️⛄️🍭🍬🎩👹👺👿😈",
-        "Tricky":"⌛️🤞✌️⏳⚒🛠🕐🕑◾️◼️🔡🔠",
-    ]
+        "Sports":"⚽️🏀🏈⚾️🎾🏐🏉🎱🏓🏸",
+        "Halloween":"🎃👻🦇☃️⛄️🍭🍬🎩👹👺",
+        "Tricky":"⌛️⏳⚒🛠🕐🕑◾️◼️🔡🔠",
+        ]
     
     override func awakeFromNib() {
         splitViewController?.delegate = self
