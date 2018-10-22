@@ -9,13 +9,6 @@
 import UIKit
 
 class ConcentrationThemeChooserViewController: UIViewController, UISplitViewControllerDelegate {
-
-
-//    let themes = [
-//        "Sports":"⚽️🏀🏈⚾️🎾🏐🏉🎱🏓🏸🏒🏑",
-//        "Halloween":"🎃👻🦇☃️⛄️🍭🍬🎩👹👺👿😈",
-//        "Tricky":"⌛️🤞✌️⏳⚒🛠🕐🕑◾️◼️🔡🔠",
-//    ]
     
     let themes = [
         "Sports":"⚽️🏀🏈⚾️🎾🏐🏉🎱🏓🏸",
